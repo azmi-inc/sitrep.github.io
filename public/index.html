@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a111b">
+  <meta name="description" content="SITREP Safe — dashboard informasi publik Indonesia.">
+  <title>SITREP — Public Situation Desk</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="brand-mark">S</div>
+      <div class="rail-label">PUBLIC<br>INFORMATION</div>
+      <div class="rail-spacer"></div>
+      <div class="rail-dot active" title="Overview"></div>
+      <div class="rail-dot" title="Earthquake"></div>
+      <div class="rail-dot" title="News"></div>
+      <div class="rail-spacer"></div>
+      <div class="rail-foot">SAFE<br>MODE</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">INDONESIA / PUBLIC INFORMATION DESK</div>
+          <h1>Situation overview<span class="accent">.</span></h1>
+        </div>
+        <div class="top-meta">
+          <span class="live-indicator"><i></i> PUBLIC DATA</span>
+          <span id="clock">--:--:-- WIB</span>
+          <button id="refresh" class="refresh-btn" type="button">↻ <span>Refresh</span></button>
+        </div>
+      </header>
+
+      <section class="status-strip">
+        <div class="status-copy"><span class="status-icon">◈</span><span>SAFE MONITORING PROFILE</span><span class="muted">·</span><span class="muted">Aggregated public sources only</span></div>
+        <div id="updated" class="muted">Waiting for first update</div>
+      </section>
+
+      <section class="metric-grid">
+        <article class="metric-card">
+          <div class="metric-label">LATEST BMKG EVENT</div>
+          <div id="magnitude" class="metric-value">—</div>
+          <div id="quake-area" class="metric-note">Loading earthquake data</div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-label">PUBLIC NEWS ITEMS</div>
+          <div id="news-count" class="metric-value">—</div>
+          <div class="metric-note">Curated RSS headlines</div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-label">DATA SOURCES</div>
+          <div id="source-count" class="metric-value">—</div>
+          <div class="metric-note">Official / public endpoints</div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-label">OPERATING MODE</div>
+          <div class="metric-value mode-value">READ<span class="accent">·</span>ONLY</div>
+          <div class="metric-note">No personal tracking</div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel quake-panel">
+          <div class="panel-head">
+            <div><div class="eyebrow">01 / GEO & HAZARD</div><h2>Latest earthquake</h2></div>
+            <span id="quake-status" class="pill">CONNECTING</span>
+          </div>
+          <div class="quake-body">
+            <div class="quake-graphic" aria-hidden="true">
+              <div class="rings"><span></span><span></span><span></span><b>◎</b></div>
+              <div class="graphic-caption">INDONESIA / SEISMIC FEED</div>
+            </div>
+            <div class="quake-detail">
+              <div class="eyebrow">REPORTED AREA</div>
+              <h3 id="quake-title">Loading public feed…</h3>
+              <p id="quake-impact" class="muted">Fetching latest information from BMKG.</p>
+              <div class="detail-pairs">
+                <div><span>DEPTH</span><strong id="quake-depth">—</strong></div>
+                <div><span>OBSERVED</span><strong id="quake-time">—</strong></div>
+                <div><span>COORDINATES</span><strong id="quake-coords">—</strong></div>
+              </div>
+              <a id="quake-source" class="source-link" href="https://www.bmkg.go.id/" target="_blank" rel="noopener noreferrer">Open BMKG source ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel source-panel">
+          <div class="panel-head">
+            <div><div class="eyebrow">02 / SOURCE HEALTH</div><h2>Feed status</h2></div>
+            <span class="pill neutral">ALLOWLISTED</span>
+          </div>
+          <div id="source-list" class="source-list">
+            <div class="source-row"><span class="source-name">BMKG</span><span class="source-state">Checking…</span></div>
+            <div class="source-row"><span class="source-name">ANTARA</span><span class="source-state">Checking…</span></div>
+          </div>
+          <div class="source-foot">Only fixed public endpoints are requested. External redirects are rejected.</div>
+        </article>
+      </section>
+
+      <section class="panel news-panel">
+        <div class="panel-head">
+          <div><div class="eyebrow">03 / NEWS WIRE</div><h2>Public headlines</h2></div>
+          <span id="news-status" class="pill">CONNECTING</span>
+        </div>
+        <div id="news-list" class="news-list"><div class="empty-state">Loading public headlines…</div></div>
+      </section>
+
+      <footer class="footer">
+        <span>SITREP SAFE <b>0.1.0</b></span>
+        <span>PUBLIC INFORMATION · NOT AN EMERGENCY SERVICE</span>
+        <span><a href="https://github.com/azmihafizhar/sitrep" target="_blank" rel="noopener noreferrer">SOURCE REPOSITORY ↗</a></span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

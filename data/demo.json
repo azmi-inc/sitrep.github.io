@@ -1,0 +1,22 @@
+{
+  "quake": {
+    "source": "BMKG (DEMO)",
+    "sourceUrl": "https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json",
+    "observedAt": "Demo data — not a live observation",
+    "magnitude": 4.8,
+    "depth": "18 km",
+    "area": "Contoh wilayah Indonesia",
+    "impact": "Data contoh untuk pratinjau antarmuka",
+    "latitude": -6.2,
+    "longitude": 106.8
+  },
+  "news": [
+    {
+      "title": "SITREP Safe siap menampilkan berita publik terverifikasi",
+      "summary": "Ini adalah konten demo. Judul berita aktual dimuat dari RSS ANTARA ketika sumber tersedia.",
+      "url": "https://www.antaranews.com/",
+      "publishedAt": "Demo",
+      "source": "DEMO"
+    }
+  ]
+}

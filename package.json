@@ -1,0 +1,14 @@
+{
+  "name": "sitrep-safe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public-information situational awareness dashboard for Indonesia",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
